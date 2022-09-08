@@ -48,7 +48,6 @@
 		DED5A6B728C9EB1000EF1B8A /* XassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6B628C9EB1000EF1B8A /* XassUITests.swift */; };
 		DED5A6B928C9EB1000EF1B8A /* XassUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6B828C9EB1000EF1B8A /* XassUITestsLaunchTests.swift */; };
 		DED5A6CE28C9EFD400EF1B8A /* SelectionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6CD28C9EFD400EF1B8A /* SelectionField.swift */; };
-		DED5A6D028C9F09400EF1B8A /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6CF28C9F09400EF1B8A /* InputField.swift */; };
 		DED5A6D228C9F4AD00EF1B8A /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6D128C9F4AD00EF1B8A /* Selectable.swift */; };
 		E7BB66293FFD472686F59BD3 /* Pods_Xass_XassUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F31677BFB5B8FD45A065DDEC /* Pods_Xass_XassUITests.framework */; };
 /* End PBXBuildFile section */
@@ -111,7 +110,6 @@
 		DED5A6B628C9EB1000EF1B8A /* XassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XassUITests.swift; sourceTree = "<group>"; };
 		DED5A6B828C9EB1000EF1B8A /* XassUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XassUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DED5A6CD28C9EFD400EF1B8A /* SelectionField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionField.swift; sourceTree = "<group>"; };
-		DED5A6CF28C9F09400EF1B8A /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		DED5A6D128C9F4AD00EF1B8A /* Selectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
 		EF3DCD19AB8B762EB0C54CA4 /* Pods-Xass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xass.debug.xcconfig"; path = "Target Support Files/Pods-Xass/Pods-Xass.debug.xcconfig"; sourceTree = "<group>"; };
 		F31677BFB5B8FD45A065DDEC /* Pods_Xass_XassUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xass_XassUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,7 +310,6 @@
 			children = (
 				DE9DC22328CA47C800A6EE10 /* BackGroundBlurView.swift */,
 				DE4EC02E28CA1A2E00549625 /* PhotoScroll.swift */,
-				DED5A6CF28C9F09400EF1B8A /* InputField.swift */,
 				DED5A6D128C9F4AD00EF1B8A /* Selectable.swift */,
 				DED5A6CD28C9EFD400EF1B8A /* SelectionField.swift */,
 				DE4EC02728C9FEA900549625 /* TableSelection.swift */,
@@ -598,7 +595,6 @@
 				DE9DC21228CA3C9D00A6EE10 /* LocationService.swift in Sources */,
 				DE4EC02C28CA17E000549625 /* Themes.swift in Sources */,
 				DED5A6CE28C9EFD400EF1B8A /* SelectionField.swift in Sources */,
-				DED5A6D028C9F09400EF1B8A /* InputField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

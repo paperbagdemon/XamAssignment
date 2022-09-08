@@ -13,7 +13,7 @@ struct HomeView: View {
     @State var alertMessage = ""
     @State var alertTitle = ""
     @State var isImagePickerShown = false
-
+    @State var isProgressViewVisible = false
     var body: some View {
         ScrollView {
             VStack {
@@ -51,7 +51,9 @@ struct HomeView: View {
                 .background(Color.XassBackgroundColor)
                 HStack {
                     Button {
+                        isProgressViewVisible = true
                         viewModel.submitDiary()?.sink(receiveCompletion: { error in
+                            isProgressViewVisible = false
                             switch error {
                             case .failure(let error):
                                 alertTitle = "Error"
@@ -80,12 +82,22 @@ struct HomeView: View {
                      message: Text(alertMessage))
             })
         }
+        .overlay(progressOverlay)
         .background(Color.XassBackgroundColor)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             viewModel.loadTestData()
         }
 
+    }
+    
+    @ViewBuilder
+    var progressOverlay: some View {
+        if isProgressViewVisible {
+            ProgressView()
+        } else {
+            EmptyView()
+        }
     }
     
     @ViewBuilder
@@ -205,7 +217,7 @@ struct HomeView: View {
             }.padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
             Divider()
             VStack {
-                SelectionField<TableSelection>(placeholder: "Select an event",selections: viewModel.selectionEvents, onSelect: { selected in
+                SelectionField<TableSelection>(placeholder: "Select an event", title: "Select an event", selections: viewModel.selectionEvents, onSelect: { selected in
                     guard let selected = selected as? String else {
                         return
                     }
