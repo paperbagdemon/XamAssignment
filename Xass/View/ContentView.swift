@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        SelectionField<TableSelection>(selections: ["1","2","3"])
+        SelectionField<TableSelection>(selections: ["1","2","3"])
+        SelectionField<TableSelection>(selections: ["1","2","3"])
     }
 }
 

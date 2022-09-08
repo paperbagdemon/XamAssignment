@@ -1,0 +1,6 @@
+framework module Pods_Xass_XassUITests {
+  umbrella header "Pods-Xass-XassUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

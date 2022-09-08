@@ -7,30 +7,37 @@
 
 import XCTest
 @testable import Xass
+import Combine
 
 class XassTests: XCTestCase {
+    var bag = Set<AnyCancellable>()
+    
+    func testPostDiaryApi() {
+        let expect = expectation(description: "webservice")
+        let service = DiaryApiService(coordinate: Coordinates(latitude: 0.0, longitude: 0.0),
+                                      photos: [PhotoScrollItem(image: UIImage(systemName: "questionmark"))],
+                                      shouldIncludeInGallery: true, comments: "comments",
+                                      date: Date(), area: "area", category: "category", tags: ["tag"], event: "event")
+        var serviceError: Error?
+        var serviceResult: EmptyData?
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+        service.request()
+        .sink(receiveCompletion: { completion in
+            switch completion {
+            case .failure(let error):
+                serviceError = error
+            case .finished: ()
+            }
+            expect.fulfill()
+        }, receiveValue: { value in
+            serviceResult = value
+        })
+        .store(in: &bag)
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        waitForExpectations(timeout: 10.0, handler: nil)
+        XCTAssertNil(serviceError, serviceError?.localizedDescription ?? "")
+        XCTAssertNotNil(serviceResult, "testPostDiaryApi call failed")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
 
 }
