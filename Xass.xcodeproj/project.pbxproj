@@ -41,7 +41,6 @@
 		DE9DC23C28CA647D00A6EE10 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9DC23B28CA647D00A6EE10 /* ImagePickerView.swift */; };
 		DE9DC23E28CA6EBE00A6EE10 /* PhotoScrollItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9DC23D28CA6EBE00A6EE10 /* PhotoScrollItem.swift */; };
 		DED5A69C28C9EB0C00EF1B8A /* XassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A69B28C9EB0C00EF1B8A /* XassApp.swift */; };
-		DED5A69E28C9EB0C00EF1B8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A69D28C9EB0C00EF1B8A /* ContentView.swift */; };
 		DED5A6A028C9EB0F00EF1B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED5A69F28C9EB0F00EF1B8A /* Assets.xcassets */; };
 		DED5A6A328C9EB0F00EF1B8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED5A6A228C9EB0F00EF1B8A /* Preview Assets.xcassets */; };
 		DED5A6AD28C9EB1000EF1B8A /* XassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6AC28C9EB1000EF1B8A /* XassTests.swift */; };
@@ -101,7 +100,6 @@
 		DE9DC23D28CA6EBE00A6EE10 /* PhotoScrollItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScrollItem.swift; sourceTree = "<group>"; };
 		DED5A69828C9EB0C00EF1B8A /* Xass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED5A69B28C9EB0C00EF1B8A /* XassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XassApp.swift; sourceTree = "<group>"; };
-		DED5A69D28C9EB0C00EF1B8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DED5A69F28C9EB0F00EF1B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DED5A6A228C9EB0F00EF1B8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DED5A6A828C9EB1000EF1B8A /* XassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				DED5A69B28C9EB0C00EF1B8A /* XassApp.swift */,
-				DED5A69D28C9EB0C00EF1B8A /* ContentView.swift */,
 				DE4EC02928CA00B800549625 /* HomeView.swift */,
 				DED5A6C928C9EF5700EF1B8A /* Controls */,
 			);
@@ -584,7 +581,6 @@
 				DE9DC21C28CA3D7000A6EE10 /* Coordinates.swift in Sources */,
 				DED5A6D228C9F4AD00EF1B8A /* Selectable.swift in Sources */,
 				DE4EC03528CA310700549625 /* CheckBox.swift in Sources */,
-				DED5A69E28C9EB0C00EF1B8A /* ContentView.swift in Sources */,
 				DE9DC21E28CA3F1000A6EE10 /* DiaryApiService.swift in Sources */,
 				DE9DC21A28CA3D0D00A6EE10 /* Constants.swift in Sources */,
 				DE4EC03328CA2DB000549625 /* Underline.swift in Sources */,
