@@ -16,12 +16,12 @@ class DiaryApiService: APIService<EmptyData> {
     var shouldIncludeInGallery: Bool?// i have no idea with this
     var comments: String?
     var date: Date?
-    var area: String?
-    var category: String?
-    var tags: [String]?
-    var event: String?
+    var area: Area?
+    var category: DiaryCategory?
+    var tags: [Tag]?
+    var event: Event?
     
-    init(coordinate: Coordinates?, photos: [PhotoScrollItem]?, shouldIncludeInGallery: Bool?, comments: String?, date: Date?, area: String?, category: String?, tags: [String]?, event: String?, client: APIClient = APIClient.defaultClient) {
+    init(coordinate: Coordinates?, photos: [PhotoScrollItem]?, shouldIncludeInGallery: Bool?, comments: String?, date: Date?, area: Area?, category: DiaryCategory?, tags: [Tag]?, event: Event?, client: APIClient = APIClient.defaultClient) {
         super.init(client: client)
         self.coordinate = coordinate
         self.photos = photos
@@ -43,7 +43,7 @@ class DiaryApiService: APIService<EmptyData> {
         parameters["comments"] = comments
         parameters["date"] = date?.toApiDate
         parameters["area"] = area
-        parameters["category"] = category
+        parameters["category"] = category?.id
         parameters["tags"] = tags
         parameters["event"] = event
         var paramImages = [String]()
@@ -64,6 +64,4 @@ class DiaryApiService: APIService<EmptyData> {
     override var endpoint: String {
         return "/api/diary"
     }
-    
-    
 }

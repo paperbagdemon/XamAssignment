@@ -10,11 +10,10 @@ import Foundation
 extension HomeViewModel {
     //MARK: mock data
     func loadTestData() {
-        selectionAreas = loadJson("areas") ?? [String]()
-        selectionCategories = loadJson("categories") ?? [String]()
-        selectionTags = loadJson("tags") ?? [String]()
-        selectionEvents = loadJson("events") ?? [String]()
-        
+//        selectionAreas = loadJson("areas") ?? [String]()
+//        selectionCategories = loadJson("categories") ?? [String]()
+//        selectionTags = loadJson("tags") ?? [String]()
+//        selectionEvents = loadJson("events") ?? [String]()
     }
     
     func loadJson<T: Decodable>(_ fileName: String) -> T? {

@@ -86,7 +86,7 @@ struct HomeView: View {
         .background(Color.XassBackgroundColor)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
-            viewModel.loadTestData()
+            viewModel.fetchSelections()
         }
 
     }
@@ -181,19 +181,19 @@ struct HomeView: View {
                     viewModel.date = selected
                 }
                 SelectionField<TableSelection>(placeholder: "Select Area", title: "Select an area", selections: viewModel.selectionAreas) { selected in
-                    guard let selected = selected as? String else {
+                    guard let selected = selected as? Area else {
                         return
                     }
                     viewModel.area = selected
                 }
                 SelectionField<TableSelection>(placeholder: "Task Category", title: "Select a category", selections: viewModel.selectionCategories) { selected in
-                    guard let selected = selected as? String else {
+                    guard let selected = selected as? DiaryCategory else {
                         return
                     }
                     viewModel.category = selected
                 }
                 SelectionField<TableSelection>(placeholder: "Tags", title: "Select a tag", selections: viewModel.selectionTags) { selected in
-                    guard let selected = selected as? String else {
+                    guard let selected = selected as? Tag else {
                         return
                     }
                     viewModel.tags = [selected]
@@ -218,7 +218,7 @@ struct HomeView: View {
             Divider()
             VStack {
                 SelectionField<TableSelection>(placeholder: "Select an event", title: "Select an event", selections: viewModel.selectionEvents, onSelect: { selected in
-                    guard let selected = selected as? String else {
+                    guard let selected = selected as? Event else {
                         return
                     }
                     viewModel.event = selected

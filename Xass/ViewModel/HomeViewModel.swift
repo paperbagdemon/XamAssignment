@@ -19,16 +19,16 @@ class HomeViewModel: ObservableObject {
     @Published var shouldIncludeInGallery = false
     @Published var comments = ""
     @Published var date = Date()
-    @Published var area = ""
-    @Published var category = ""
-    @Published var tags: [String]?
-    @Published var event: String?
+    @Published var area: Area?
+    @Published var category: DiaryCategory?
+    @Published var tags: [Tag]?
+    @Published var event: Event?
     @Published var shouldLinkToEvent = false
     
-    @Published var selectionAreas: [String] = [String]()
-    @Published var selectionCategories: [String] = [String]()
-    @Published var selectionTags: [String] = [String]()
-    @Published var selectionEvents: [String] = [String]()
+    @Published var selectionAreas: [Area] = [Area]()
+    @Published var selectionCategories: [DiaryCategory] = [DiaryCategory]()
+    @Published var selectionTags: [Tag] = [Tag]()
+    @Published var selectionEvents: [Event] = [Event]()
     
     init() {
         locationService.objectWillChange.sink { [weak self] _ in
@@ -44,7 +44,70 @@ class HomeViewModel: ObservableObject {
     
     // MARK: Webservices
     @discardableResult func submitDiary() -> Future<EmptyData?, Error>? {
-        return DiaryApiService.init(coordinate: coordinate, photos: photos, shouldIncludeInGallery: shouldIncludeInGallery, comments: comments, date: date, area: area, category: category, tags: tags, event: shouldLinkToEvent == true ? event : nil).request()
+        return DiaryApiService(coordinate: coordinate, photos: photos, shouldIncludeInGallery: shouldIncludeInGallery, comments: comments, date: date, area: area, category: category, tags: tags, event: shouldLinkToEvent == true ? event : nil).request()
+    }
+    
+    @discardableResult func fetchCategories() -> Future<CategoriesApiResponse?, Error>? {
+        let request = CategoriesApiService().request()
+        request.sink { [weak self] error in
+            switch error {
+            case .failure(_):
+                self?.selectionCategories = [DiaryCategory]()
+            case .finished: ()
+            }
+        } receiveValue: { [weak self] response in
+            self?.selectionCategories = response?.data ?? [DiaryCategory]()
+        }.store(in: &bag)
+        return request
+    }
+    
+    @discardableResult func fetchAreas() -> Future<AreaApiResponse?, Error>? {
+        let request = AreaApiService().request()
+        request.sink { [weak self] error in
+            switch error {
+            case .failure(_):
+                self?.selectionAreas = [Area]()
+            case .finished: ()
+            }
+        } receiveValue: { [weak self] response in
+            self?.selectionAreas = response?.data ?? [Area]()
+        }.store(in: &bag)
+        return request
+    }
+    
+    @discardableResult func fetchEvents() -> Future<EventApiResponse?, Error>? {
+        let request = EventsApiService().request()
+        request.sink { [weak self] error in
+            switch error {
+            case .failure(_):
+                self?.selectionEvents = [Event]()
+            case .finished: ()
+            }
+        } receiveValue: { [weak self] response in
+            self?.selectionEvents = response?.data ?? [Event]()
+        }.store(in: &bag)
+        return request
+    }
+    
+    @discardableResult func fetchTags() -> Future<TagApiResponse?, Error>? {
+        let request = TagsApiService().request()
+        request.sink { [weak self] error in
+            switch error {
+            case .failure(_):
+                self?.selectionTags = [Tag]()
+            case .finished: ()
+            }
+        } receiveValue: { [weak self] response in
+            self?.selectionTags = response?.data ?? [Tag]()
+        }.store(in: &bag)
+        return request
+    }
+    
+    func fetchSelections() {
+        fetchCategories()
+        fetchAreas()
+        fetchEvents()
+        fetchTags()
     }
     
     func fetchCoordinates() {

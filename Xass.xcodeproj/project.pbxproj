@@ -48,6 +48,10 @@
 		DED5A6B928C9EB1000EF1B8A /* XassUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6B828C9EB1000EF1B8A /* XassUITestsLaunchTests.swift */; };
 		DED5A6CE28C9EFD400EF1B8A /* SelectionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6CD28C9EFD400EF1B8A /* SelectionField.swift */; };
 		DED5A6D228C9F4AD00EF1B8A /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A6D128C9F4AD00EF1B8A /* Selectable.swift */; };
+		DEE9D49228CAC99100B42CB7 /* CategoriesApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9D49128CAC99100B42CB7 /* CategoriesApiService.swift */; };
+		DEE9D49428CACD9C00B42CB7 /* AreasApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9D49328CACD9C00B42CB7 /* AreasApiService.swift */; };
+		DEE9D49628CACF2E00B42CB7 /* TagsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9D49528CACF2E00B42CB7 /* TagsApiService.swift */; };
+		DEE9D49828CACF8D00B42CB7 /* EventsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9D49728CACF8D00B42CB7 /* EventsApiService.swift */; };
 		E7BB66293FFD472686F59BD3 /* Pods_Xass_XassUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F31677BFB5B8FD45A065DDEC /* Pods_Xass_XassUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +113,10 @@
 		DED5A6B828C9EB1000EF1B8A /* XassUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XassUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DED5A6CD28C9EFD400EF1B8A /* SelectionField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionField.swift; sourceTree = "<group>"; };
 		DED5A6D128C9F4AD00EF1B8A /* Selectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
+		DEE9D49128CAC99100B42CB7 /* CategoriesApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApiService.swift; sourceTree = "<group>"; };
+		DEE9D49328CACD9C00B42CB7 /* AreasApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreasApiService.swift; sourceTree = "<group>"; };
+		DEE9D49528CACF2E00B42CB7 /* TagsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsApiService.swift; sourceTree = "<group>"; };
+		DEE9D49728CACF8D00B42CB7 /* EventsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApiService.swift; sourceTree = "<group>"; };
 		EF3DCD19AB8B762EB0C54CA4 /* Pods-Xass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xass.debug.xcconfig"; path = "Target Support Files/Pods-Xass/Pods-Xass.debug.xcconfig"; sourceTree = "<group>"; };
 		F31677BFB5B8FD45A065DDEC /* Pods_Xass_XassUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xass_XassUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD718048BD728D2C31C2452F /* Pods-Xass-XassUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xass-XassUITests.debug.xcconfig"; path = "Target Support Files/Pods-Xass-XassUITests/Pods-Xass-XassUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +187,10 @@
 				DE9DC21428CA3CE200A6EE10 /* APIClient.swift */,
 				DE9DC21528CA3CE200A6EE10 /* APIService.swift */,
 				DE9DC21D28CA3F1000A6EE10 /* DiaryApiService.swift */,
+				DEE9D49128CAC99100B42CB7 /* CategoriesApiService.swift */,
+				DEE9D49328CACD9C00B42CB7 /* AreasApiService.swift */,
+				DEE9D49528CACF2E00B42CB7 /* TagsApiService.swift */,
+				DEE9D49728CACF8D00B42CB7 /* EventsApiService.swift */,
 				DE9DC21F28CA413C00A6EE10 /* Api+Extensions.swift */,
 			);
 			path = Webservices;
@@ -572,9 +584,11 @@
 				DE9DC23E28CA6EBE00A6EE10 /* PhotoScrollItem.swift in Sources */,
 				DE4EC02828C9FEA900549625 /* TableSelection.swift in Sources */,
 				DE9DC23C28CA647D00A6EE10 /* ImagePickerView.swift in Sources */,
+				DEE9D49428CACD9C00B42CB7 /* AreasApiService.swift in Sources */,
 				DE9DC21728CA3CE200A6EE10 /* APIService.swift in Sources */,
 				DE9DC22228CA429400A6EE10 /* DateSelection.swift in Sources */,
 				DE9DC21628CA3CE200A6EE10 /* APIClient.swift in Sources */,
+				DEE9D49828CACF8D00B42CB7 /* EventsApiService.swift in Sources */,
 				DE9DC22028CA413C00A6EE10 /* Api+Extensions.swift in Sources */,
 				DE9DC22428CA47C800A6EE10 /* BackGroundBlurView.swift in Sources */,
 				DE4EC02A28CA00B800549625 /* HomeView.swift in Sources */,
@@ -587,6 +601,8 @@
 				DE4EC02F28CA1A2E00549625 /* PhotoScroll.swift in Sources */,
 				DE9DC21028CA3B0E00A6EE10 /* HomeViewModel.swift in Sources */,
 				DED5A69C28C9EB0C00EF1B8A /* XassApp.swift in Sources */,
+				DEE9D49228CAC99100B42CB7 /* CategoriesApiService.swift in Sources */,
+				DEE9D49628CACF2E00B42CB7 /* TagsApiService.swift in Sources */,
 				DE9DC23A28CA544400A6EE10 /* TestData+Extensions.swift in Sources */,
 				DE9DC21228CA3C9D00A6EE10 /* LocationService.swift in Sources */,
 				DE4EC02C28CA17E000549625 /* Themes.swift in Sources */,
